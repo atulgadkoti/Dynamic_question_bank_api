@@ -61,11 +61,10 @@ Fetches unseen questions for a student based on skill, difficulty level, and cou
 {
   "questions": [
     {
-      "id": 1,
-      "skill": "Math",
-      "sub_skill": "Algebra",
-      "level": "A",
-      "question_text": "What is 2 + 2?"
+      "id": "q001",
+      "prompt": "The author implies that...",
+      "options": ["A", "B", "C", "D"],
+      "question_type": "mcq"
     }
   ],
   "served_count": 1,
@@ -96,9 +95,9 @@ Submits a student's answer to a question and records their response.
 4. Go to the Body tab, choose JSON, and add:
 ```json
 {
-  "student_id": "student123",
-  "question_id": 1,
-  "selected_answer": "A"
+  "student_id": "abc-123",
+  "question_id": "q001",
+  "selected_answer": "B"
 }
 ```
 5. Click Send.
