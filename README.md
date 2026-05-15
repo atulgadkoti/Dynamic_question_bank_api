@@ -102,6 +102,21 @@ Submits a student's answer to a question and records their response.
 ```
 5. Click Send.
 
+### 3. Student Stats
+
+GET /api/student/question-stats
+
+Example:
+
+ `https://dynamic-question-bank-api.onrender.com/api/student/question-stats?student_id=demo123`
+
+Returns:
+- total_attempts
+- correct_answers
+- overall_accuracy
+- sub_skill_accuracy
+- trap_type_mistakes
+
 ## Project Structure
 - `app.js` — Main Express application setup
 - `routes/questionRoutes.js` — API route handlers
