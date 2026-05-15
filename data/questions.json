@@ -1,0 +1,193 @@
+[
+  {
+    "id":"q001",
+    "skill":"reading",
+    "sub_skill":"inference",
+    "level":"A",
+    "question_type":"mcq",
+    "prompt":"The author implies that...",
+    "options":["A","B","C","D"],
+    "answer":"B",
+    "trap_type":"scope_distractor"
+  },
+  {
+    "id":"q002",
+    "skill":"reading",
+    "sub_skill":"detail",
+    "level":"A",
+    "question_type":"mcq",
+    "prompt":"According to the passage...",
+    "options":["A","B","C","D"],
+    "answer":"C",
+    "trap_type":"paraphrase_trap"
+  },
+  {
+    "id":"q003",
+    "skill":"reading",
+    "sub_skill":"inference",
+    "level":"B",
+    "question_type":"mcq",
+    "prompt":"The writer suggests...",
+    "options":["A","B","C","D"],
+    "answer":"A",
+    "trap_type":null
+  },
+  {
+    "id":"q004",
+    "skill":"speaking",
+    "sub_skill":"fluency",
+    "level":"A",
+    "question_type":"audio_prompt",
+    "prompt":"Describe your daily routine.",
+    "answer":null,
+    "trap_type":null
+  },
+  {
+    "id":"q005",
+    "skill":"writing",
+    "sub_skill":"coherence",
+    "level":"A",
+    "question_type":"paragraph_repair",
+    "prompt":"Fix the linking devices in this paragraph: The experiment failed. But however yet the team tried again.",
+    "answer":"The experiment failed. However, the team tried again.",
+    "trap_type":null
+  },
+  {
+    "id":"q006",
+    "skill":"reading",
+    "sub_skill":"inference",
+    "level":"A",
+    "question_type":"mcq",
+    "prompt":"What can be inferred from the final paragraph?",
+    "options":["A","B","C","D"],
+    "answer":"D",
+    "trap_type":"scope_distractor"
+  },
+  {
+    "id":"q007",
+    "skill":"reading",
+    "sub_skill":"inference",
+    "level":"A",
+    "question_type":"mcq",
+    "prompt":"Which statement best reflects the author's tone?",
+    "options":["A","B","C","D"],
+    "answer":"C",
+    "trap_type":"tone_trap"
+  },
+  {
+    "id":"q008",
+    "skill":"reading",
+    "sub_skill":"inference",
+    "level":"B",
+    "question_type":"mcq",
+    "prompt":"What assumption does the writer make?",
+    "options":["A","B","C","D"],
+    "answer":"B",
+    "trap_type":"logic_trap"
+  },
+  {
+    "id":"q009",
+    "skill":"reading",
+    "sub_skill":"inference",
+    "level":"C",
+    "question_type":"mcq",
+    "prompt":"Which unstated idea supports the argument?",
+    "options":["A","B","C","D"],
+    "answer":"A",
+    "trap_type":"logic_trap"
+  },
+  {
+    "id":"q010",
+    "skill":"reading",
+    "sub_skill":"detail",
+    "level":"A",
+    "question_type":"mcq",
+    "prompt":"What did the character do after the meeting?",
+    "options":["A","B","C","D"],
+    "answer":"D",
+    "trap_type":"paraphrase_trap"
+  },
+  {
+    "id":"q011",
+    "skill":"reading",
+    "sub_skill":"detail",
+    "level":"B",
+    "question_type":"mcq",
+    "prompt":"Which fact is directly mentioned in the passage?",
+    "options":["A","B","C","D"],
+    "answer":"A",
+    "trap_type":"detail_confusion"
+  },
+  {
+    "id":"q012",
+    "skill":"writing",
+    "sub_skill":"coherence",
+    "level":"A",
+    "question_type":"paragraph_repair",
+    "prompt":"Improve the transitions: She studied hard. Therefore but she failed the exam.",
+    "answer":"She studied hard. However, she failed the exam.",
+    "trap_type":null
+  },
+  {
+    "id":"q013",
+    "skill":"writing",
+    "sub_skill":"coherence",
+    "level":"B",
+    "question_type":"paragraph_repair",
+    "prompt":"Fix the paragraph cohesion issues in the following text.",
+    "answer":"Corrected paragraph with improved cohesion.",
+    "trap_type":null
+  },
+  {
+    "id":"q014",
+    "skill":"speaking",
+    "sub_skill":"fluency",
+    "level":"A",
+    "question_type":"audio_prompt",
+    "prompt":"Talk about your favorite hobby.",
+    "answer":null,
+    "trap_type":null
+  },
+  {
+    "id":"q015",
+    "skill":"speaking",
+    "sub_skill":"fluency",
+    "level":"B",
+    "question_type":"audio_prompt",
+    "prompt":"Describe a challenging situation you handled successfully.",
+    "answer":null,
+    "trap_type":null
+  },
+  {
+    "id":"q016",
+    "skill":"reading",
+    "sub_skill":"detail",
+    "level":"C",
+    "question_type":"mcq",
+    "prompt":"Which statistic was cited by the author?",
+    "options":["A","B","C","D"],
+    "answer":"B",
+    "trap_type":"detail_confusion"
+  },
+  {
+    "id":"q017",
+    "skill":"writing",
+    "sub_skill":"coherence",
+    "level":"C",
+    "question_type":"paragraph_repair",
+    "prompt":"Rewrite the paragraph to improve logical flow and cohesion.",
+    "answer":"Improved logically connected paragraph.",
+    "trap_type":null
+  },
+  {
+    "id":"q018",
+    "skill":"reading",
+    "sub_skill":"inference",
+    "level":"C",
+    "question_type":"mcq",
+    "prompt":"What deeper meaning can be derived from the passage?",
+    "options":["A","B","C","D"],
+    "answer":"D",
+    "trap_type":"scope_distractor"
+  }
+]
