@@ -1,6 +1,6 @@
 # Dynamic Question Bank API
 
-An Dynamic question bank API that serves questions to students based on skill, difficulty level, and learning history. It tracks which questions each student has seen and  selects new questions at appropriate difficulty levels.
+A Dynamic question bank API that serves questions to students based on skill, difficulty level, and learning history. It tracks which questions each student has seen and  selects new questions at appropriate difficulty levels.
 
 ## Prerequisites
 - Node.js 12 or higher
@@ -30,8 +30,8 @@ https://dynamic-question-bank-api.onrender.com
 
 You can test the live API by using the same endpoints shown below but replacing `http://localhost:3000` with the deployed base URL above. For example, use:
 
-- GET https://dynamic-question-bank-api.onrender.com/api/questions?student_id=student123&skill=Math&sub_skill=Algebra&level=A&count=5
-- POST https://dynamic-question-bank-api.onrender.com/api/questions/submit-answer (JSON body as shown below)
+- GET https://dynamic-question-bank-api.onrender.com/api/questions?skill=reading&sub_skill=inference&level=A&student_id=demo123&count=2
+- POST https://dynamic-question-bank-api.onrender.com/api/questions/submit-answer (JSON body given below )
 
 Thunder Client: create requests with the deployed URL in the request field and send.
 
@@ -53,7 +53,7 @@ Fetches unseen questions for a student based on skill, difficulty level, and cou
 1. Open Thunder Client in VS Code.
 2. Create a new request and set the method to `GET`.
 3. Paste this URL:
-  `https://dynamic-question-bank-api.onrender.com/api/questions?student_id=student123&skill=Math&sub_skill=Algebra&level=A&count=5`
+  `https://dynamic-question-bank-api.onrender.com/api/questions?skill=reading&sub_skill=inference&level=A&student_id=demo123&count=2`
 4. Click Send.
 
 **Example Response:**
@@ -74,7 +74,7 @@ Fetches unseen questions for a student based on skill, difficulty level, and cou
 ```
 
 ### 2. Submit Answer
-**POST** `/api/questions/submit-answer`
+**POST** `https://dynamic-question-bank-api.onrender.com/api/questions/submit-answer`
 
 Submits a student's answer to a question and records their response.
 
@@ -137,8 +137,6 @@ git branch -M main
 git remote add origin https://github.com/your-username/your-repo-name.git
 git push -u origin main
 ```
-
-Replace `your-username` and `your-repo-name` with your GitHub details.
 
 ## Notes
 - This is a minimal API for development and learning purposes
