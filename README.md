@@ -82,9 +82,9 @@ Submits a student's answer to a question and records their response.
 **Request Body:**
 ```json
 {
-  "student_id": "student123",
-  "question_id": 1,
-  "selected_answer": "A"
+  "student_id": "demo123",
+  "question_id": "q001",
+  "selected_answer": "B"
 }
 ```
 
