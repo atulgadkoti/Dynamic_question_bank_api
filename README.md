@@ -1,6 +1,6 @@
 # Dynamic Question Bank API
 
-An adaptive question bank API that serves questions to students based on skill, difficulty level, and learning history. It tracks which questions each student has seen and  selects new questions at appropriate difficulty levels.
+An Dynamic question bank API that serves questions to students based on skill, difficulty level, and learning history. It tracks which questions each student has seen and  selects new questions at appropriate difficulty levels.
 
 ## Prerequisites
 - Node.js 12 or higher
@@ -132,7 +132,6 @@ Replace `your-username` and `your-repo-name` with your GitHub details.
 ## Notes
 - This is a minimal API for development and learning purposes
 - Student progress is stored in memory and will be lost on server restart
-- For production, replace `memoryStore.js` with a real database
 
 ## Author
 Atul Gadkoti
