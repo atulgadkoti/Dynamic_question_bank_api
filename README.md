@@ -22,6 +22,19 @@ The server will start on **http://localhost:3000**
 
 You should see: `Server running on port 3000`
 
+## Deployment
+
+This project is deployed on Render and is available at:
+
+https://dynamic-question-bank-api.onrender.com
+
+You can test the live API by using the same endpoints shown below but replacing `http://localhost:3000` with the deployed base URL above. For example, use:
+
+- GET https://dynamic-question-bank-api.onrender.com/api/questions?student_id=student123&skill=Math&sub_skill=Algebra&level=A&count=5
+- POST https://dynamic-question-bank-api.onrender.com/api/questions/submit-answer (JSON body as shown below)
+
+Thunder Client: create requests with the deployed URL in the request field and send.
+
 ## API Endpoints
 
 ### 1. Get Questions
@@ -36,11 +49,11 @@ Fetches unseen questions for a student based on skill, difficulty level, and cou
 - `level` (required) — difficulty level: `A` (easiest), `B` (medium), `C` (hardest)
 - `count` (required) — number of questions to retrieve
 
-**How to test in Thunder Client:**
+**How to test in Thunder Client (deployed):**
 1. Open Thunder Client in VS Code.
 2. Create a new request and set the method to `GET`.
 3. Paste this URL:
-  `http://localhost:3000/api/questions?student_id=student123&skill=Math&sub_skill=Algebra&level=A&count=5`
+  `https://dynamic-question-bank-api.onrender.com/api/questions?student_id=student123&skill=Math&sub_skill=Algebra&level=A&count=5`
 4. Click Send.
 
 **Example Response:**
@@ -75,13 +88,12 @@ Submits a student's answer to a question and records their response.
 }
 ```
 
-**How to test in Thunder Client:**
+**How to test in Thunder Client (deployed):**
 1. Open Thunder Client in VS Code.
 2. Create a new request and set the method to `POST`.
 3. Paste this URL:
-   `http://localhost:3000/api/questions/submit-answer`
+  `https://dynamic-question-bank-api.onrender.com/api/questions/submit-answer`
 4. Go to the Body tab, choose JSON, and add:
-
 ```json
 {
   "student_id": "student123",
