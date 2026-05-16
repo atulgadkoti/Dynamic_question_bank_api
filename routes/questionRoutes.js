@@ -1,49 +1,39 @@
 const express = require("express");
 const questions = require("../data/questions.json");
 const { seenQuestions, studentStats } = require("../store/memoryStore");
-
 const router = express.Router();
-
 const levels = ["A", "B", "C"];
 
-router.get("/questions", (req, res) => {
-
-    const { skill, sub_skill, level, student_id, count } = req.query;
-
-    if (!student_id) {
+router.get("/questions",(req,res)=>{
+    const{skill,sub_skill,level,student_id,count }=req.query;
+    if(!student_id){
         return res.status(400).json({
             message: "student_id is required"
         });
     }
-
-    if (!seenQuestions[student_id]) {
+if (!seenQuestions[student_id]) {
         seenQuestions[student_id] = new Set();
     }
-
     const skillQuestions = questions.filter((question) => {
         return (
             question.skill === skill &&
             question.sub_skill === sub_skill
         );
     });
-
     const unseenSkillQuestions = skillQuestions.filter((question) => {
         return !seenQuestions[student_id].has(question.id);
     });
-
-    if (unseenSkillQuestions.length === 0) {
+ if (unseenSkillQuestions.length === 0) {
         return res.json({
             exhausted: true,
             message: "All questions seen. Generating adaptive question."
-        });
+        }
+);
     }
 
     const currentLevelIndex = levels.indexOf(level);
-
     let finalQuestions = [];
-
     let fallbackUsed = false;
-
     let fallbackReason = "";
 
     for (
@@ -51,66 +41,47 @@ router.get("/questions", (req, res) => {
         i < levels.length && finalQuestions.length < Number(count);
         i++
     ) {
-
         const currentLevel = levels[i];
-
         const levelQuestions = unseenSkillQuestions.filter((question) => {
             return question.level === currentLevel;
         });
-
         const remainingQuestionsNeeded =
             Number(count) - finalQuestions.length;
-
         const selectedQuestions =
             levelQuestions.slice(0, remainingQuestionsNeeded);
-
         finalQuestions = finalQuestions.concat(selectedQuestions);
-
         if (i > currentLevelIndex && selectedQuestions.length > 0) {
-
             fallbackUsed = true;
-
             fallbackReason =
                 `Not enough unseen questions at level ${level}. ` +
                 `Used level ${currentLevel} questions to complete count.`;
         }
     }
-
     const sanitizedQuestions = finalQuestions.map(({ answer, ...rest }) => rest);
-
     sanitizedQuestions.forEach((question) => {
         seenQuestions[student_id].add(question.id);
     });
-
     res.json({
         questions: sanitizedQuestions,
         served_count: sanitizedQuestions.length,
         fallback_used: fallbackUsed,
         fallback_reason: fallbackReason
     });
-
 });
-
 router.post("/questions/submit-answer", (req, res) => {
-
     const { student_id, question_id, selected_answer } = req.body;
-
     if (!student_id || !question_id) {
         return res.status(400).json({
             message: "student_id and question_id are required"
         });
     }
-
     const question = questions.find((q) => q.id === question_id);
-
     if (!question) {
         return res.status(404).json({
             message: "Question not found"
         });
     }
-
     const isCorrect = question.answer === selected_answer;
-
     if (!studentStats[student_id]) {
         studentStats[student_id] = {
             total_attempts: 0,
@@ -119,15 +90,11 @@ router.post("/questions/submit-answer", (req, res) => {
             trap_type_mistakes: {}
         };
     }
-
-    const stats = studentStats[student_id];
-
+    const stats=studentStats[student_id];
     stats.total_attempts++;
-
     if (isCorrect) {
-        stats.correct_answers++;
+    stats.correct_answers++;
     }
-
     if (!stats.sub_skill_stats[question.sub_skill]) {
         stats.sub_skill_stats[question.sub_skill] = {
             attempts: 0,

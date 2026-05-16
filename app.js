@@ -13,3 +13,12 @@ app.get("/", (req, res)=>{
 app.listen(PORT, ()=>{
     console.log(`Server running on port ${PORT}`);
 });
+
+// https://dynamic-question-bank-api.onrender.com/api/questions?skill=reading&sub_skill=inference&level=A&student_id=demo123&count=2
+
+// https://dynamic-question-bank-api.onrender.com/api/questions/submit-answer
+
+
+
+// https://dynamic-question-bank-api.onrender.com/api/student/question-stats?student_id=demo123
+
